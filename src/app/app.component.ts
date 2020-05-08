@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { APIService } from './api.service';
 import { NgModule } from '@angular/core';
-import { Subscriber } from 'rxjs';
 
 
 @Component({
@@ -11,10 +9,4 @@ import { Subscriber } from 'rxjs';
 })
 export class AppComponent {
   title = 'NotesApp';
-
-  constructor(apiService: APIService) {
-    apiService.getUsers().subscribe((data) => {
-      console.log(data);
-    })
-  }
 }

@@ -1,0 +1,31 @@
+<body>
+<div>
+<!--
+  <button mat-stroked-button (click)="AddUserComponent()">Voeg een naam toe: </button>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Input</mat-label>
+    <input [(ngModel)]="nieuweNaam">
+  </mat-form-field>
+-->
+</div>
+
+<div>
+  <h2>Alle gebruikers</h2>
+    <ul class = users>
+      <li *ngFor="let user of users" (click)="onSelect(user)">
+        <span class="badge">{{user.id}}</span> {{user.name}}
+      </li>
+    </ul>
+</div>
+
+<div *ngIf="selectedUser">
+  <h2>Notities van {{selectedUser.name}}</h2>
+  <div>
+    <label>name:
+      <input [(ngModel)]="selectedUser.name" placeholder="name"/>
+    </label>
+  </div>
+</div>
+
+</body>
