@@ -1,0 +1,15 @@
+<h2>Alle gebruikers</h2>
+
+<ul class="gebruikers">
+
+  <li *ngFor="let gebruiker of gebruikers"
+
+    [class.selected]="gebruiker === geselecteerdeGebruiker"
+
+    (click)="onSelect(gebruiker)">
+
+    <span class="badge">{{gebruiker.id}}</span> {{gebruiker.name}}
+
+  </li>
+
+</ul>
