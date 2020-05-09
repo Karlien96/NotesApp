@@ -8,11 +8,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UsersComponent } from './users/users.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UserNotesComponent } from './user-notes/user-notes.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UsersComponent
+    UsersComponent,
+    UserNotesComponent
   ],
   imports: [
     BrowserModule,
