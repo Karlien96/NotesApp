@@ -1,0 +1,26 @@
+<div>
+
+    <div *ngIf="user">
+
+        <button mat-stroked-button (click)='deleteUserComp()'> Gebruiker verwijderen </button>
+
+        <h2>Notities van {{user.name}}</h2> 
+
+        <ul class = notes> 
+            <li *ngFor="let note of notities">
+              {{note.notitie}}
+            </li>
+        </ul>
+    </div>
+
+    <div *ngIf="user">
+
+        <mat-form-field>
+            <mat-label>Nieuwe notitie</mat-label>
+            <input matInput [(ngModel)]="nieuweNotitie">
+        </mat-form-field>
+
+        <button mat-stroked-button (click)='AddNoteComponent()'> Toevoegen </button>
+    </div>
+
+</div>
