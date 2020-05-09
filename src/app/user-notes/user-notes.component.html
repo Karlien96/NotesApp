@@ -1,25 +1,21 @@
 <div>
 
     <div *ngIf="user">
-        <h2>Notities van {{user.name}}</h2>      
+        <h2>Notities van {{user.name}}</h2> 
+<!--
+        <ul class = notes *ngFor='User.user= user'> 
+            <li *ngFor="let note of notes">
+              <span class="badge">{{note.id}}</span> {{note.note}}
+            </li>
+          </ul>
+        -->
+
+        <mat-form-field>
+            <mat-label>Nieuwe notitie</mat-label>
+            <input matInput [(ngModel)]="nieuweNotitie">
+        </mat-form-field>
+
+        <button mat-stroked-button (click)='AddNoteComponent()'> Toevoegen </button>
     </div>
-
-    <!--
-    <label>name:
-      <input [(ngModel)]="selectedUser.name" placeholder="name"/>
-    </label>
-
-      <button mat-stroked-button (click)="AddUserComponent()">Voeg een notitie toe: </button>
-
-      <mat-form-field [style.fontSize]="fontSize.value">
-        <mat-label>Autosize textarea</mat-label>
-          <textarea matInput
-                  cdkTextareaAutosize
-                  #autosize="cdkTextareaAutosize"
-                  cdkAutosizeMinRows="1"
-                  cdkAutosizeMaxRows="5"></textarea>
-      </mat-form-field>
-
-  -->
 
 </div>

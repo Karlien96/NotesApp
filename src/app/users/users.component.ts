@@ -31,8 +31,11 @@ export class UsersComponent implements OnInit {
   }
 
   selectedUser: User;
+  naamSelectedUser: string;
   onSelect(user: User): void {
     this.selectedUser = user;
+    this.naamSelectedUser = this.selectedUser.name;
   }
+  
 
 }

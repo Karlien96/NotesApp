@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import {User} from './users';
+import {Note} from './Notes';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +21,14 @@ export class ApiService {
 
   deleteUser = (naam: string) => { 
     return this.http.delete('https://distinct-ringed-koi.glitch.me/users?name='+naam);
+  }
+
+  addNote = (value: string, naam: string) => {
+    return this.http.post('https://distinct-ringed-koi.glitch.me/notes?name='+naam, {content: value, name: naam})
+  }
+
+  getNotes = () :Observable<Note[]> => {
+    return this.http.get<Note[]>('https://distinct-ringed-koi.glitch.me/users');
   }
 
 }
