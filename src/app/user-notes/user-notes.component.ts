@@ -12,12 +12,12 @@ import { UsersComponent} from '../users/users.component';
 })
 export class UserNotesComponent implements OnInit {
 
-  notes: Array<Note>;
+  notities: Array<Note>;
 
   constructor(private apiService: ApiService,
     private userComponent: UsersComponent) { 
-      this.apiService.getNotes().subscribe((data : Array<Note>) => {
-        this.notes = data;
+      this.apiService.getNotes(this.userComponent.naamSelectedUser).subscribe((data : Array<Note>) => {
+        this.notities = data;
         console.log(data);
     })
   }
@@ -29,8 +29,15 @@ export class UserNotesComponent implements OnInit {
   }
 
   nieuweNotitie: string;
+  
   AddNoteComponent = () => {
     this.apiService.addNote(this.nieuweNotitie, this.userComponent.naamSelectedUser).subscribe((response) => {
+      console.log(response);
+    });
+  }
+
+  deleteUserComp = () => {
+    this.apiService.deleteUser(this.userComponent.naamSelectedUser).subscribe((response) => {
       console.log(response);
     });
   }

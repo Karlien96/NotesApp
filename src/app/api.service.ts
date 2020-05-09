@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import {User} from './users';
 import {Note} from './Notes';
+import { UserNotesComponent } from './user-notes/user-notes.component';
 
 @Injectable({
   providedIn: 'root'
@@ -20,15 +21,15 @@ export class ApiService {
   }
 
   deleteUser = (naam: string) => { 
-    return this.http.delete('https://distinct-ringed-koi.glitch.me/users?name='+naam);
+    return this.http.get('https://distinct-ringed-koi.glitch.me/remove?name='+naam);
   }
 
   addNote = (value: string, naam: string) => {
     return this.http.post('https://distinct-ringed-koi.glitch.me/notes?name='+naam, {content: value, name: naam})
   }
 
-  getNotes = () :Observable<Note[]> => {
-    return this.http.get<Note[]>('https://distinct-ringed-koi.glitch.me/users');
+  getNotes = (naam: string) :Observable<Note[]> => {
+    return this.http.get<Note[]>('https://distinct-ringed-koi.glitch.me/notes?name='+naam);
   }
 
 }

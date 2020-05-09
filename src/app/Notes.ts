@@ -1,7 +1,4 @@
-import { User } from './users';
-
 export interface Note {
-    note: string;
+    notitie: string;
     id: number;
-    user: User;
 }

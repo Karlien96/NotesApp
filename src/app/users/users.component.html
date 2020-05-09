@@ -1,18 +1,18 @@
 <body>
-<!--
+
   <div>
     <p>Nieuwe gebruiker toevoegen</p>
     <mat-form-field>
       <mat-label>Nieuwe gebruiker</mat-label>
-      <input [(ngModel)]="nieuweNaam">
+      <input matInput [(ngModel)]="nieuweNaam">
     </mat-form-field>
   
     <button mat-stroked-button (click)='AddUserComponent()'> Toevoegen </button>
   
-  </div>-->
+  </div>
 
 
-  <div *ngIf=true>
+  <div>
     <h2>Alle gebruikers</h2>
       <ul class = users>
         <li *ngFor="let user of users" (click)="onSelect(user)">
