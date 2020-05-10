@@ -1,13 +1,12 @@
 <body>
 
   <div>
-    <p>Nieuwe gebruiker toevoegen</p>
     <mat-form-field>
       <mat-label>Nieuwe gebruiker</mat-label>
       <input matInput [(ngModel)]="nieuweNaam">
     </mat-form-field>
   
-    <button mat-stroked-button (click)='AddUserComponent()'> Toevoegen </button>
+    <button mat-raised-button color="primary" (click)='AddUserComponent()'> Toevoegen </button>
   
   </div>
 
@@ -16,13 +15,13 @@
     <h2>Alle gebruikers</h2>
       <ul class = users>
         <li *ngFor="let user of users" (click)="onSelect(user)">
-          <span class="badge">{{user.id}}</span> {{user.name}}
+          {{user.name}}
         </li>
       </ul>
   </div>
 
 
 
-<app-user-notes [user]="selectedUser"></app-user-notes>
+<app-user-notes [user]="selectedUser" *ngIf='isereenuser'></app-user-notes>
 
 </body>

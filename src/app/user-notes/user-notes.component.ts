@@ -4,6 +4,7 @@ import { ApiService } from '../api.service';
 import { Note } from '../Notes';
 import { NgModule } from '@angular/core';
 import { UsersComponent} from '../users/users.component';
+import {MatIconModule} from '@angular/material/icon';
 
 @Component({
   selector: 'app-user-notes',
@@ -33,12 +34,15 @@ export class UserNotesComponent implements OnInit {
   AddNoteComponent = () => {
     this.apiService.addNote(this.nieuweNotitie, this.userComponent.naamSelectedUser).subscribe((response) => {
       console.log(response);
+      window.location.reload();
+      this.userComponent.onSelect(this.userComponent.selectedUser);
     });
   }
 
   deleteUserComp = () => {
     this.apiService.deleteUser(this.userComponent.naamSelectedUser).subscribe((response) => {
       console.log(response);
+      window.location.reload();
     });
   }
 

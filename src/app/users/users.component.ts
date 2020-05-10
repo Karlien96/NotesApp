@@ -27,14 +27,17 @@ export class UsersComponent implements OnInit {
   AddUserComponent = () => {
     this.apiService.addUser(this.nieuweNaam).subscribe((response) => {
       console.log(response);
+      window.location.reload();
     });
   }
 
   selectedUser: User;
   naamSelectedUser: string;
+  isereenuser: boolean = false;
   onSelect(user: User): void {
     this.selectedUser = user;
     this.naamSelectedUser = this.selectedUser.name;
+    this.isereenuser = true;
   }
   
 
